@@ -1,4 +1,6 @@
 let canvas = $("#GDT")[0];
+const ctx = canvas.getContext("2d");
+
 let level = prompt("Paste your Geometry Dash Testing level here:");
 
 function GDTtoJSON(gdt) {
@@ -20,6 +22,13 @@ function GDTtoJSON(gdt) {
 }
 
 let json = GDTtoJSON(level);
+
+canvas.width = json[json.length - 1].x + 600;
+canvas.height = screen.height;
 json.forEach(obj => {
-  // canvas stuff
+  const img = new Image();
+  img.src = `https://gdcolon.com/obj/${obj.id}.png`;
+  img.addEventListener("load", () => {
+    ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 50, 50);
+  });
 });
