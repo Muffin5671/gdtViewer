@@ -1,5 +1,5 @@
 let canvas = $("gdt")[0];
-let level = confirm("Paste your Geometry Dash Testing level here:");
+let level = prompt("Paste your Geometry Dash Testing level here:");
 
 function GDTtoJSON(gdt) {
   let json = [];
