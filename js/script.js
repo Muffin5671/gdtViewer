@@ -1,4 +1,4 @@
-let canvas = $("gdt")[0];
+let canvas = $("#GDT")[0];
 let level = prompt("Paste your Geometry Dash Testing level here:");
 
 function GDTtoJSON(gdt) {
@@ -6,12 +6,14 @@ function GDTtoJSON(gdt) {
   let objects = gdt.split("~")[1];
 
   objects.split(";").forEach(obj => {
-    let id = obj.split(",")[0];
-    let x = obj.split(",")[1];
-    let y = obj.split(",")[2];
-    let dir = obj.split(",")[3];
+    if (obj) {
+      let id = Number(obj.split(",")[0]);
+      let x = Number(obj.split(",")[1]);
+      let y = Number(obj.split(",")[2]);
+      let dir = Number(obj.split(",")[3]);
 
-    json.push({ id, x, y, dir });
+      json.push({ id, x, y, dir });
+    }
   });
 
   return json;
