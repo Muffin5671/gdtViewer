@@ -1,7 +1,7 @@
-let canvas = $("#GDT")[0];
+const canvas = $("#GDT")[0];
 const ctx = canvas.getContext("2d");
 
-let level = prompt("Paste your Geometry Dash Testing level here:");
+const level = prompt("Paste your Geometry Dash Testing level here:");
 
 function GDTtoJSON(gdt) {
   let json = [];
