@@ -60,13 +60,13 @@ try {
   }
   canvas.style.backgroundColor = convertBGColorToHWB(bg.color, bg.brightness);
 
-  canvas.width = json[json.length - 1].x * 20;
+  canvas.width = json[json.length - 1].x * 15;
   canvas.height = screen.height;
   json.forEach(obj => {
     const img = new Image();
     img.src = `/gdtViewer/images/${obj.id}.png`;
     img.addEventListener("load", () => {
-      ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 50, 50);
+      ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 64, 64);
     });
   });
 } catch (e) {
