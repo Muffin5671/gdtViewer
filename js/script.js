@@ -46,16 +46,16 @@ try {
   };
   switch (bg.id) {
     case 1:
-      canvas.style.backgroundImage = "../images/game_bg_01_001-uhd.png";
+      canvas.style.backgroundImage = "url(/images/game_bg_01_001-uhd.png)";
       break;
     case 2:
-      canvas.style.backgroundImage = "../images/game_bg_07_001-uhd.png";
+      canvas.style.backgroundImage = "url(/images/game_bg_07_001-uhd.png)";
       break;
     case 3:
-      canvas.style.backgroundImage = "../images/game_bg_11_001-uhd.png";
+      canvas.style.backgroundImage = "url(/images/game_bg_11_001-uhd.png)";
       break;
     default:
-      canvas.style.backgroundImage = "../images/game_bg_01_001-uhd.png";
+      canvas.style.backgroundImage = "url(/images/game_bg_01_001-uhd.png)";
       break;
   }
   canvas.style.backgroundColor = convertBGColorToHWB(bg.color, bg.brightness);
@@ -64,7 +64,7 @@ try {
   canvas.height = screen.height;
   json.forEach(obj => {
     const img = new Image();
-    img.src = `../images/${obj.id}.png`;
+    img.src = `/images/${obj.id}.png`;
     img.addEventListener("load", () => {
       ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 50, 50);
     });
