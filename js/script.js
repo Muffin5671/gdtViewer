@@ -64,9 +64,9 @@ try {
   canvas.height = screen.height;
   json.forEach(obj => {
     const img = new Image();
-    img.src = `https://gdcolon.com/obj/${obj.id}.png`;
+    img.src = `https://gdcolon.com/obj/${obj.id}.png`; // sorry colon
     img.addEventListener("load", (event) => {
-      ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 64, 64);
+      ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 50, 50);
     });
   });
 } catch (e) {
