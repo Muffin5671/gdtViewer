@@ -37,9 +37,9 @@ function convertBGColorToHWB(tint, brightness) {
 }
 
 try {
-  let json = GDTtoJSON(level);
+  const json = GDTtoJSON(level);
 
-  let bg = {
+  const bg = {
     id: Number(level.split("~")[0].split("_")[0]),
     color: Number(level.split("~")[0].split("_")[1]),
     brightness: Number(level.split("~")[0].split("_")[2])
@@ -64,8 +64,8 @@ try {
   canvas.height = screen.height;
   json.forEach(obj => {
     const img = new Image();
-    img.src = `/gdtViewer/images/${obj.id}.png`;
-    img.addEventListener("load", () => {
+    img.src = `https://gdcolon.com/obj/${obj.id}.png`;
+    img.addEventListener("load", (event) => {
       ctx.drawImage(img, obj.x * 1.65, -obj.y * 1.65 + (canvas.height - 25), 64, 64);
     });
   });
